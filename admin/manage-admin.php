@@ -9,7 +9,7 @@
         </div>
         <table>
             <tr class="border-bottom">
-            <th class="p-2">S.N.</th>
+            <th class="p-2">ID</th>
             <th class="p-2">Full Name</th>
             <th class="p-2">Username</th>
             <th class="p-2">Actions</th>
@@ -33,7 +33,7 @@
                         
                         
                         <tr>
-                <td class="p-2"><?php echo $row['id']; ?></td>
+                <td class="p-2"><?php echo $row['id']; ?>.</td>
                 <td class="p-2"><?php echo $row['full_name']; ?></td>
                 <td class="p-2"><?php echo $row['username'];?></td>
                 <td class="p-2 flex-wrap d-flex">
