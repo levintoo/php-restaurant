@@ -26,13 +26,13 @@
                     <div class="collapse navbar-collapse menu text-right " id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-12 justify-content-center">
                             <li class="nav-item">
-                                <a href="index.html">Home</a>
+                                <a href="./index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="categories.html">Admin</a>
+                                <a href="./manage-admin.php">Admin</a>
                             </li>
                             <li class="nav-item">
-                                <a href="foods.html">category</a>
+                                <a href="">category</a>
                             </li>
                             <li class="nav-item">
                                 <a href="#">Food</a>
