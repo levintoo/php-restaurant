@@ -1,0 +1,46 @@
+*, *::after,*::before{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    padding: 1%;
+    width: 80%;
+    margin: 0 auto;
+}
+ /* start of css for menu  */
+ .menu ul li{
+    padding: 1%;
+ }
+ .menu{
+     line-height: 0 !important; 
+ }
+ .menu ul li a{
+    text-decoration: none; 
+ }
+ .menu ul li a:hover{
+    color: #ff4757 !important;
+ }
+ /* end of css for menu  */
+
+
+/* css for main content */
+.main-content{
+    margin: 1% 0;
+    background: #f1f2f6;
+}
+/* end of css for main content */
+
+/* css for footer */
+.footer{
+    background:#ff6b81;
+    color: #fff;
+}
+.wrapper p a{
+    color: white;
+    text-decoration: none;
+}
+.wrapper p a:hover{
+    color: #ffcbcf;
+}
+/* end of css for footer */
