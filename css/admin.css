@@ -8,9 +8,7 @@
     width: 80%;
     margin: 0 auto;
 }
-nav{
-    border-bottom: 1px solid #747d8c;
-}
+
  /* start of css for menu  */
 
  .menu ul li{
@@ -18,6 +16,9 @@ nav{
  }
  .menu{
      line-height: 0 !important; 
+ }
+ .menu:first-child{
+    border-bottom: 1px solid grey;
  }
  .menu ul li a{
     text-decoration: none; 
@@ -30,7 +31,6 @@ nav{
 
 /* css for main content */
 .main-content{
-    margin: 1% 0;
     background: #f1f2f6;
 }
 /* end of css for main content */
