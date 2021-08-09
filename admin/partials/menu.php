@@ -32,13 +32,13 @@
                                 <a href="./manage-admin.php">Admin</a>
                             </li>
                             <li class="nav-item">
-                                <a href="">category</a>
+                                <a href="./manage-category.php">category</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#">Food</a>
+                                <a href="./manage-food.php">Food</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#">Order</a>
+                                <a href="./manage-order.php">Order</a>
                             </li>
                         </ul>
 
