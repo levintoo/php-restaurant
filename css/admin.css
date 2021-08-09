@@ -8,7 +8,11 @@
     width: 80%;
     margin: 0 auto;
 }
+nav{
+    border-bottom: 1px solid #747d8c;
+}
  /* start of css for menu  */
+
  .menu ul li{
     padding: 1%;
  }
