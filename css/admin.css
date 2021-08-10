@@ -32,6 +32,7 @@
 /* css for main content */
 .main-content{
     background: #f1f2f6;
+    min-height: 80vh;
 }
 /* end of css for main content */
 
