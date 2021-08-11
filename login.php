@@ -42,7 +42,7 @@
                 <li class="nav-item">
                     <a href="#">Contact</a>
                 </li>
-                <li><img src="./images/person.jpg" alt="" class="rounded-circle" width="50rem" height="50rem"></li>
+                <!-- <li><img src="./images/person.jpg" alt="" class="rounded-circle" width="50rem" height="50rem"></li> -->
             </ul>
 
         </div>
@@ -56,7 +56,7 @@
             
             <h2 class="text-center text-white">Sign In</h2>
 
-            <form action="#" class="order">
+            <form action="http://localhost:7882/wowfood/php/login.php" method="post" class="order">
                 <fieldset>
                     <legend>User Details</legend>
                     <div class="order-label">Email</div>

@@ -44,7 +44,7 @@
                     <li class="nav-item">
                         <a href="#">Contact</a>
                     </li>
-                    <li><img src="./images/person.jpg" alt="" class="rounded-circle" width="50rem" height="50rem"></li>
+                    <!-- <li><img src="./images/person.jpg" alt="" class="rounded-circle" width="50rem" height="50rem"></li> -->
                 </ul>
 
             </div>
