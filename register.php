@@ -59,8 +59,8 @@
 
             <h2 class="text-center text-white">Create account</h2>
 
-            <form action="#" class=" order">
-                <fieldset>
+            <form action="http://localhost:7882/wowfood/php/insert-user.php" class="order" method="POST">
+                
                     <legend>User Details</legend>
                     <div class="order-label">Full Name</div>
                     <input type="text" name="full-name" placeholder="" class="input-responsive" required>
@@ -78,12 +78,12 @@
                     <input type="password" name="password" placeholder="" class="input-responsive" required>
 
                     <div class="order-label">Re-enter password</div>
-                    <input type="passwordCheck" name="password" placeholder="" class="input-responsive" required>
+                    <input type="password" name="passwordCheck" placeholder="" class="input-responsive" required>
 
                     <div class="order-label">Already have an ccount? <a href="">login</a> </div>
 
                     <input type="submit" name="submit" value="Create account" class="btn btn-primary">
-                </fieldset>
+                
 
             </form>
 
