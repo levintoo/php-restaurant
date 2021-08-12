@@ -5,7 +5,7 @@
     <div class="wrapper row py-lg-4 py-md-3 col-md-12 ">
         <p class="fs-2"><strong>Manage Admin</strong></p>
         <div class="mb-3">
-        <a href="" class="btn-sm btn-info text-light p-2">Add Admin</a>
+        <a href="add-admin.php" class="btn-sm btn-info text-light p-2">Add Admin</a>
         </div>
         <table>
             <tr class="border-bottom">
