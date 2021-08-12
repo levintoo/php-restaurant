@@ -3,7 +3,7 @@
 <section class="main-content">
     <div class="wrapper">
     
-    <form action="http://localhost:7882/wowfood/php/insert-user.php" class="order" method="POST">
+    <form action="http://localhost:7882/wowfood/admin/action/register-admin.php" class="order" method="POST">
                 
                 <!-- <legend class="">Add admin</legend> -->
         <p class="fs-2"><strong>Add Admin</strong></p>
