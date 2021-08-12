@@ -1,4 +1,7 @@
 
+<?php
+$db = mysqli_connect("localhost", "levo", "levoo.me", "food_order");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
