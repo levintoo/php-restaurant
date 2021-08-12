@@ -4,7 +4,9 @@
 <section class="main-content">
     <div class="wrapper row py-lg-4 py-md-3 col-md-12 ">
         <p class="fs-2"><strong>Manage Admin</strong></p>
-
+        <div class="mb-3">
+        <a href="" class="btn-sm btn-info text-light p-2">Add Admin</a>
+        </div>
         <table>
             <tr class="border-bottom">
             <th class="p-2">S.N.</th>
@@ -16,7 +18,38 @@
                 <td class="p-2">1</td>
                 <td class="p-2">Levoo</td>
                 <td class="p-2">Levo</td>
-                <td class="p-2">Delet Admin</td>
+                <td class="p-2 flex-wrap d-flex">
+                    <a href="" class="btn-sm btn-success p-2">Update Admin</a>
+                    <a href="" class="btn-sm btn-danger p-2">Delete Admin</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="p-2">2</td>
+                <td class="p-2">Levoo</td>
+                <td class="p-2">Levo</td>
+                <td class="p-2">
+                    <a href="" class="btn-sm btn-success p-2">Update Admin</a>
+                    <a href="" class="btn-sm btn-danger p-2">Delete Admin</a>
+                   
+                </td>
+            </tr> <tr>
+                <td class="p-2">3</td>
+                <td class="p-2">Levoo</td>
+                <td class="p-2">Levo</td>
+                <td class="p-2">
+                    <a href="" class="btn-sm btn-success p-2">Update Admin</a>
+                    <a href="" class="btn-sm btn-danger p-2">Delete Admin</a>
+                   
+                </td>
+            </tr> <tr>
+                <td class="p-2">4</td>
+                <td class="p-2">Levoo</td>
+                <td class="p-2">Levo</td>
+                <td class="p-2">
+                    <a href="" class="btn-sm btn-success p-2">Update Admin</a>
+                    <a href="" class="btn-sm btn-danger p-2">Delete Admin</a>
+                   
+                </td>
             </tr>
             
         </table>
