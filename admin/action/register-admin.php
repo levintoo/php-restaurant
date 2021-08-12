@@ -7,4 +7,5 @@ $pass = hash('sha512', $pass);
 $query = "INSERT into tbl_admin (full_name, username, password) VALUES ( '$fullname','$username','$pass')";
 $result = mysqli_query($db, $query);
 
+header("Location: http://localhost:7882/wowfood/admin");
 ?>
