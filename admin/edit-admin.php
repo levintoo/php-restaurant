@@ -1,41 +1,5 @@
 <?php include('./partials/menu.php');
-$id = $_GET['id']; ?>
-
-<section class="main-content">
-    <div class="wrapper">
-
-        <form action="" class="order" method="POST">
-
-            <!-- <legend class="">Add admin</legend> -->
-            <p class="fs-2"><strong>Edit Details</strong></p>
-
-            <div class="order-label">Full Name</div>
-            <input type="text" name="full-name" class="input-responsive" value=
-            "<?php if (isset($_SESSION['fullname'])) {
-                echo $_SESSION['fullname'];
-                unset($_SESSION['fullname']);
-            } ?>">
-
-            <div class="order-label">Username</div>
-            <input type="text" name="username" class="input-responsive" value=
-            "<?php if (isset($_SESSION['username'])) {
-                echo $_SESSION['username'];
-                unset($_SESSION['username']);
-            } ?>">
-
-            <div class="order-label">Not seeing your data?<a href="" >update</a> </div>
-
-            <input type="submit" name="submit" value="Update" class="btn btn-info text-white">
-
-
-
-        </form>
-
-    </div>
-</section>
-
-<?php include('./partials/footer.php'); ?>
-<?php
+$id = $_GET['id']; 
 
 
 $query = "SELECT * FROM tbl_admin WHERE id=$id";
@@ -48,8 +12,8 @@ if($result == true){
         //get admin details
         $data = mysqli_fetch_assoc($result);
 
-        $_SESSION['fullname'] =($full_name = $data['full_name']);
-        $_SESSION['username'] =($username = $data['username']);
+        $full_name = $data['full_name'];
+        $username = $data['username'];
         // header("location: http://localhost:7882/wowfood/admin/edit-admin.php?id=$id");
 
         
@@ -61,6 +25,44 @@ if($result == true){
     }
 }
 else{
-    
+
 }
 ?>
+
+<section class="main-content">
+    <div class="wrapper">
+
+        <form action="" class="order" method="POST">
+
+            <!-- <legend class="">Add admin</legend> -->
+            <p class="fs-2"><strong>Edit Details</strong></p>
+
+            <div class="order-label">Full Name</div>
+            <input type="text" name="full-name" class="input-responsive" value="<?php echo  $full_name; ?>">
+
+            <div class="order-label">Username</div>
+            <input type="text" name="username" class="input-responsive" value="<?php echo  $username; ?>">
+
+            <div class="order-label">Not seeing your data?<a href="" > submit</a> </div>
+
+            <input type="submit" name="submit" value="update" class="btn btn-info text-white">
+
+
+
+        </form>
+    </div>
+</section>
+
+
+
+<?php 
+if (isset($_POST['full-name'])) {
+    echo "Clickity";
+}
+else{
+    echo "clickwell";
+}    
+?>
+<?php include('./partials/footer.php'); ?>
+
+

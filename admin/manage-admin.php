@@ -1,16 +1,16 @@
-<?php include('./partials/menu.php') ?>
+<?php include('./partials/menu.php'); ?>
 
 <!-- main content section start  -->
 <section class="main-content">
     <div class="wrapper row py-lg-4 py-md-3 col-md-12 ">
         <p class="fs-2"><strong>Manage Admin</strong></p>
 
-        
+
         <?php if (isset($_SESSION['delete'])) {
             echo $_SESSION['delete'];
             unset($_SESSION['delete']);
         } ?>
-         <?php if (isset($_SESSION['update'])) {
+        <?php if (isset($_SESSION['update'])) {
             echo $_SESSION['update'];
             unset($_SESSION['update']);
         } ?>
@@ -20,7 +20,7 @@
         </div>
         <table>
             <tr class="border-bottom">
-                <th class="p-2">S.N.</th>
+                <th class="p-2">ID</th>
                 <th class="p-2">Full Name</th>
                 <th class="p-2">Username</th>
                 <th class="p-2">Actions</th>
@@ -35,19 +35,19 @@
             $result = mysqli_query($db, $query);
             if ($result == true) {
                 $count = mysqli_num_rows($result);
-                $sn = 1;
+
                 if ($count > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $id = $row['id'];
                         $full_name = $row['full_name'];
                         $username = $row['username'];
-                        
-                       
+
+
             ?>
 
 
                         <tr>
-                            <td class="p-2"><?php echo $sn++; ?>.</td>
+                            <td class="p-2"><?php echo $row['id']; ?></td>
                             <td class="p-2"><?php echo $row['full_name']; ?></td>
                             <td class="p-2"><?php echo $row['username']; ?></td>
                             <td class="p-2 flex-wrap d-flex">
