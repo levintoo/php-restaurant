@@ -7,7 +7,7 @@ $id = $_GET['id'];
 $query = "DELETE FROM tbl_admin WHERE id =$id";
 $result = mysqli_query($db, $query);
 // check query excution succesful or not
-if ($result == true) {
+if($result ==true) {
     //succesful
     // echo "admin deleted";
     //create session to display message
@@ -15,7 +15,8 @@ if ($result == true) {
     <strong class="me-5">Admin successfully deleted</strong>
     </div>';
     header('location: http://localhost:7882/wowfood/admin/manage-admin.php');
-} else {
+}
+else{
     //filed
     //echo "filed";
     $_SESSION['delete'] = '<div class="alert alert-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
@@ -23,5 +24,6 @@ if ($result == true) {
 
 </div>';
     header('location: http://localhost:7882/wowfood/admin/manage-admin.php');
+
 }
 //redirect to manage admin with message success or failed
