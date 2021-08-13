@@ -12,7 +12,7 @@ if($result ==true) {
     // echo "admin deleted";
     //create session to display message
     $_SESSION['delete'] = '<div class="alert alert-success alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
-    <strong class="me-5">Admin successfully deleted</strong>
+    <strong class="mx-2">Admin successfully deleted</strong>
     </div>';
     header('location: http://localhost:7882/wowfood/admin/manage-admin.php');
 }

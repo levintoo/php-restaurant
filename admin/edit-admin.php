@@ -46,6 +46,7 @@ else{
             <div class="order-label">Not seeing your data?<a href="" > submit</a> </div>
 
             <input type="submit" name="submit" value="update" class="btn btn-info text-white">
+            <input type="hidden" name="id" value="<?php echo $id; ?>" class="btn btn-info text-white">
 
 
 
@@ -57,10 +58,28 @@ else{
 
 <?php 
 if (isset($_POST['full-name'])) {
-    echo "Clickity";
+    $id = $_POST['id'];
+    $full_name = $_POST['full-name'];
+    $username = $_POST['username'];
+
+    $query = "UPDATE tbl_admin SET full_name='$full_name',username='$username', id='$id' WHERE id='$id' ";
+    $result = mysqli_query($db, $query);
+
+    if($result == true){
+        $_SESSION['update'] = '<div class="alert alert-success alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+        <strong class="mx-2">Updated successfully</strong>
+        </div>';
+        header('location: http://localhost:7882/wowfood/admin/manage-admin.php');
+    }
+    else{
+        $_SESSION['update'] = '<div class="alert alert-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+        <strong class="mx-2">Failed to edit admin details</strong>
+        </div>';
+        header('location: http://localhost:7882/wowfood/admin/manage-admin.php');
+    }
 }
 else{
-    echo "clickwell";
+    
 }    
 ?>
 <?php include('./partials/footer.php'); ?>
