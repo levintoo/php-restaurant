@@ -1,7 +1,5 @@
 
-<?php
-$db = mysqli_connect("localhost", "levo", "levoo.me", "food_order");
-?>
+ <?php include('../config/constants.php');?>
 <!DOCTYPE html>
 <html lang="en">
 

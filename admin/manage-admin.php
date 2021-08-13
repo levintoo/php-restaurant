@@ -4,6 +4,12 @@
 <section class="main-content">
     <div class="wrapper row py-lg-4 py-md-3 col-md-12 ">
         <p class="fs-2"><strong>Manage Admin</strong></p>
+        
+        <?php if (isset($_SESSION['delete'])){
+            echo $_SESSION['delete'];
+            unset( $_SESSION['delete']);
+        }?>
+
         <div class="mb-3">
         <a href="add-admin.php" class="btn-sm btn-info text-light p-2">Add Admin</a>
         </div>

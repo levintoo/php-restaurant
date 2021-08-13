@@ -1,5 +1,5 @@
  <?php
-session_start();
+
 $db = mysqli_connect("localhost", "levo", "levoo.me", "food_order");
 $email = mysqli_real_escape_string($db, $_POST['email']);
 $pass = mysqli_real_escape_string($db, $_POST['password']);
