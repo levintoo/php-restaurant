@@ -51,8 +51,9 @@
                             <td class="p-2"><?php echo $row['full_name']; ?></td>
                             <td class="p-2"><?php echo $row['username']; ?></td>
                             <td class="p-2 flex-wrap d-flex">
-                                <a href="http://localhost:7882/wowfood/admin/edit-admin.php?id=<?php echo $id; ?>" class="btn-sm btn-success p-2">Update Admin</a>
-                                <a href="http://localhost:7882/wowfood/admin/action/delete-admin.php?id=<?php echo $id; ?>" class="btn-sm btn-danger p-2">Delete Admin</a>
+                                <a href="http://localhost:7882/wowfood/admin/update-password.php?id=<?php echo $id; ?>" class="btn-sm me-2 btn-info  text-light p-2">Change password</a>
+                                <a href="http://localhost:7882/wowfood/admin/edit-admin.php?id=<?php echo $id; ?>" class="me-2 btn-sm btn-success p-2">Update Admin</a>
+                                <a href="http://localhost:7882/wowfood/admin/action/delete-admin.php?id=<?php echo $id; ?>" class="me-2 btn-sm btn-danger p-2">Delete Admin</a>
                             </td>
                         </tr>
 
