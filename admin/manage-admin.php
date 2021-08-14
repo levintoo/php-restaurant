@@ -14,6 +14,10 @@
             echo $_SESSION['update'];
             unset($_SESSION['update']);
         } ?>
+         <?php if (isset($_SESSION['user-not-found'])) {
+            echo $_SESSION['user-not-found'];
+            unset($_SESSION['user-not-found']);
+        } ?>
 
         <div class="mb-3">
             <a href="add-admin.php" class="btn-sm btn-info text-light p-2">Add Admin</a>

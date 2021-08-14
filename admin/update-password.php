@@ -31,30 +31,31 @@
 
     </div>
 </section>
-<?php 
+<?php
 
-if(isset($_POST['submit'])){
-    $id=$_POST['id'];
-    $current_password=$_POST['current_password'];
-    $new_password=$_POST['new_password'];
-    $confirm_password=$_POST['confirm_password'];
+if (isset($_POST['submit'])) {
+    $id = $_POST['id'];
+    $current_password = $_POST['current_password'];
+    $current_password = hash('sha512', $current_password);
+    $new_password = $_POST['new_password'];
+    $confirm_password = $_POST['confirm_password'];
 
-    $query="SELECT * FROM tbl_admin WHERE id =$id AND password='$current_password'";
-    $result=mysqli_query($db, $query);
+    $query = "SELECT * FROM tbl_admin WHERE id =$id AND password='$current_password'";
+    $result = mysqli_query($db, $query);
 
-    if($result == true){
-        $count=mysqli_num_rows($result);
-        if($count ==1){
-            echo"found";
+    if ($result == true) {
+        $count = mysqli_num_rows($result);
+        if ($count == 1) {
+            
+        } else {
+            $_SESSION['user-not-found'] = '<div class="alert alert-warning alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+            <strong class="mx-2">User not found</strong>
+            </div>';
+            header('location: http://localhost:7882/wowfood/admin/manage-admin.php');
         }
-        else{
-
-        }
-    }else{
-
+    } else {
     }
-}else{
-
+} else {
 }
 
 ?>
