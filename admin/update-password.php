@@ -11,7 +11,10 @@
 
             <!-- <legend class="">Add admin</legend> -->
             <p class="fs-2"><strong>Update password</strong></p>
-
+            <?php if (isset($_SESSION['passwords-dont-match'])) {
+            echo $_SESSION['passwords-dont-match'];
+            unset($_SESSION['passwords-dont-match']);
+        } ?>
             <div class="order-label">Old Password</div>
             <input type="password" name="current_password" placeholder="old password" class="input-responsive" required>
 
@@ -37,8 +40,8 @@ if (isset($_POST['submit'])) {
     $id = $_POST['id'];
     $current_password = $_POST['current_password'];
     $current_password = hash('sha512', $current_password);
-    $new_password = $_POST['new_password'];
-    $confirm_password = $_POST['confirm_password'];
+    $new_password = md5($_POST['new_password']);
+    $confirm_password = md5($_POST['confirm_password']);
 
     $query = "SELECT * FROM tbl_admin WHERE id =$id AND password='$current_password'";
     $result = mysqli_query($db, $query);
@@ -46,7 +49,13 @@ if (isset($_POST['submit'])) {
     if ($result == true) {
         $count = mysqli_num_rows($result);
         if ($count == 1) {
-            
+            if($new_password == $confirm_password) {
+               
+            }else{
+                $_SESSION['passwords-dont-match'] = '<div class="alert alert-danger alert-dismissible fade show p-2  d-flex h-auto align-items-center" role="alert">
+                <strong class="mx-2">passwords dont match</strong>
+                </div>';
+            }
         } else {
             $_SESSION['user-not-found'] = '<div class="alert alert-warning alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
             <strong class="mx-2">User not found</strong>
