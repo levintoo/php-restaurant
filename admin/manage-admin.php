@@ -18,6 +18,14 @@
             echo $_SESSION['user-not-found'];
             unset($_SESSION['user-not-found']);
         } ?>
+          <?php if (isset($_SESSION['password-change'])) {
+            echo $_SESSION['password-change'];
+            unset($_SESSION['password-change']);
+        } ?>
+        <?php if (isset($_SESSION['newuser'])) {
+            echo $_SESSION['newuser'];
+            unset($_SESSION['newuser']);
+        } ?>
 
         <div class="mb-3">
             <a href="add-admin.php" class="btn-sm btn-info text-light p-2">Add Admin</a>

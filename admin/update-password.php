@@ -50,7 +50,15 @@ if (isset($_POST['submit'])) {
         $count = mysqli_num_rows($result);
         if ($count == 1) {
             if($new_password == $confirm_password) {
-               
+                
+                $query = "UPDATE tbl_admin SET password='$new_password' WHERE id='$id' ";
+                $result = mysqli_query($db, $query);
+
+                $_SESSION['password-change'] = '<div class="alert alert-success alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+                <strong class="mx-2">password changed successfully</strong>
+                </div>';            
+             header('location: http://localhost:7882/wowfood/admin/manage-admin.php');
+
             }else{
                 $_SESSION['passwords-dont-match'] = '<div class="alert alert-danger alert-dismissible fade show p-2  d-flex h-auto align-items-center" role="alert">
                 <strong class="mx-2">passwords dont match</strong>
