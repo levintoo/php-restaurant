@@ -7,7 +7,10 @@
                 
                 <!-- <legend class="">Add admin</legend> -->
         <p class="fs-2"><strong>Add Admin</strong></p>
-
+        <?php if (isset($_SESSION['username-exist'])) {
+            echo $_SESSION['username-exist'];
+            unset($_SESSION['username-exist']);
+        } ?>
                 <div class="order-label">Full Name</div>
                 <input type="text" name="full-name" placeholder="" class="input-responsive" required>
 

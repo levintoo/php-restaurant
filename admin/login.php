@@ -67,7 +67,21 @@
 <?php
     if(isset($_POST['submit'])){
         $username = $_POST['username'];
-        $username = md5($_POST['password']);
+        $password = md5($_POST['password']);
+
+        $query = "SELECT * FROM tbl_admin WHERE username ='$username' AND password ='$password'";
+        $result = mysqli_query($db, $query);
+        $count = mysqli_num_rows($result);
+        if ($result == true){
+            if ($count==1){
+                
+            }else{
+
+            }
+        }else{
+            
+        }
+        
     }else{
         
     }
