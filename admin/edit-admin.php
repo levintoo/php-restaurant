@@ -61,6 +61,7 @@ if (isset($_POST['full-name'])) {
     $id = $_POST['id'];
     $full_name = $_POST['full-name'];
     $username = $_POST['username'];
+    
 
     $query = "UPDATE tbl_admin SET full_name='$full_name',username='$username', id='$id' WHERE id='$id' ";
     $result = mysqli_query($db, $query);

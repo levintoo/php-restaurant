@@ -2,6 +2,10 @@
 
 <!-- main content section start  -->
 <section class="main-content">
+    <?php if (isset($_SESSION['login'])) {
+        echo $_SESSION['login'];
+        unset($_SESSION['login']);
+    } ?>
     <div class="wrapper row py-lg-4 py-md-3 col-md-12 ">
         <p class="fs-2"><strong>Manage Admin</strong></p>
 
@@ -14,11 +18,11 @@
             echo $_SESSION['update'];
             unset($_SESSION['update']);
         } ?>
-         <?php if (isset($_SESSION['user-not-found'])) {
+        <?php if (isset($_SESSION['user-not-found'])) {
             echo $_SESSION['user-not-found'];
             unset($_SESSION['user-not-found']);
         } ?>
-          <?php if (isset($_SESSION['password-change'])) {
+        <?php if (isset($_SESSION['password-change'])) {
             echo $_SESSION['password-change'];
             unset($_SESSION['password-change']);
         } ?>

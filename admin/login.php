@@ -29,6 +29,11 @@
             <form action="" method="post" class="order">
                 <fieldset>
                     <legend>Admin Details</legend>
+                    
+            <?php if (isset($_SESSION['login'])) {
+            echo $_SESSION['login'];
+            unset($_SESSION['login']);
+        } ?>
                     <div class="order-label">Username</div>
                     <input type="text" name="username" placeholder="" class="input-responsive" required>
 
@@ -74,12 +79,22 @@
         $count = mysqli_num_rows($result);
         if ($result == true){
             if ($count==1){
-                
+                $_SESSION['login'] = '<div class="alert alert-succes alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+                <strong class="me-5">Login successful</strong>
+                </div>';
+                header('location: http://localhost:7882/wowfood/admin/manage-admin.php');
             }else{
-
+                $_SESSION['login'] = '<div class="alert alert-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+                <strong class="me-5">Error check your details</strong>
+                </div>';
+                header('location: http://localhost:7882/wowfood/admin/login.php');
             }
         }else{
-            
+            $_SESSION['login'] = '<div class="alert alert-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+            <strong class="me-5">Stack error</strong>
+            </div>';
+            header('location: http://localhost:7882/wowfood/admin/login.php');
+
         }
         
     }else{
