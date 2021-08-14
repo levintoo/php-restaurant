@@ -42,6 +42,9 @@
                             <li class="nav-item">
                                 <a href="./manage-order.php">Order</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="text-danger" href="http://localhost:7882/wowfood/admin/logout.php">Logout</a>
+                            </li>
                         </ul>
 
                     </div>

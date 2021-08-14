@@ -2,6 +2,10 @@
 
     <!-- main content section start  -->
     <section class="main-content">
+    <?php if (isset($_SESSION['login'])) {
+        echo $_SESSION['login'];
+        unset($_SESSION['login']);
+    } ?>
         <div class="wrapper row py-lg-4 py-md-3 col-md-12">
             <p class="fs-2"><strong>Dashboard</strong></p>
 

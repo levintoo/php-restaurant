@@ -79,10 +79,10 @@
         $count = mysqli_num_rows($result);
         if ($result == true){
             if ($count==1){
-                $_SESSION['login'] = '<div class="alert alert-succes alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+                $_SESSION['login'] = '<div class="alert text-success alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
                 <strong class="me-5">Login successful</strong>
                 </div>';
-                header('location: http://localhost:7882/wowfood/admin/manage-admin.php');
+                header('location: http://localhost:7882/wowfood/admin/index.php');
             }else{
                 $_SESSION['login'] = '<div class="alert alert-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
                 <strong class="me-5">Error check your details</strong>
