@@ -14,10 +14,10 @@
             <fieldset>
                 <legend></legend>
                 <div class="order-label">Title</div>
-                <input type="text" name="title" placeholder="" class="input-responsive" >
+                <input type="text" name="title" placeholder="" class="input-responsive" required>
 
                 <div class="order-label">Image</div>
-                <input type="file" name="image" placeholder="" class="input-responsive" >
+                <input type="file" name="image" placeholder="" class="input-responsive" required>
                
                 <!-- //featured -->
                 <div class="order-label text-danger">Featured</div>
