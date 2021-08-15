@@ -10,9 +10,14 @@
 
         <h2 class="text-center text-white">Add category</h2>
 
-        <form action="http://localhost:7882/wowfood/admin/action/add-category.php" method="POST" class="order">
+        <form action="http://localhost:7882/wowfood/admin/action/add-category.php" method="POST" class="order" enctype="multipart/form-data">
             <fieldset>
                 <legend></legend>
+
+               <?php if (isset($_SESSION['upload'])) {
+            echo $_SESSION['upload'];
+            unset($_SESSION['upload']);
+        } ?>
                 <div class="order-label">Title</div>
                 <input type="text" name="title" placeholder="" class="input-responsive" required>
 
