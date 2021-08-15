@@ -4,6 +4,10 @@
 <div class="wrapper row py-lg-4 py-md-3 col-md-12">
             <p class="fs-2"><strong>Manage Category</strong></p>
             <div class="mb-3">
+            <?php if (isset($_SESSION['addcateg'])) {
+            echo $_SESSION['addcateg'];
+            unset($_SESSION['addcateg']);
+        } ?>
         <a href="http://localhost:7882/wowfood/admin/add-category.php" class="btn-sm btn-info text-light p-2">Add Category</a>
         </div>
         <table>
