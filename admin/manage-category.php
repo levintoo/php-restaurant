@@ -47,7 +47,19 @@
                     <tr>
                 <td class="p-2"><?php echo $sn++ ?></td>
                 <td class="p-2"><?php echo $title; ?></td>
-                <td class="p-2"><?php echo $image_name; ?></td>
+
+                <td class="p-2">
+                    <?php 
+                        if(!$image_name ==""){
+                            ?>
+                            <img src="<?php echo SITEURL; ?>images/category/<?php echo $image_name; ?>" width="100px" alt="">
+                            <?php
+                        }else{
+                            echo '<span class="text-danger">No image available</span>';
+                        }
+                    ?>
+                </td>
+
                 <td class="p-2"><?php echo $featured; ?></td>
                 <td class="p-2"><?php echo $active; ?></td>
                 <td class="p-2 flex-wrap d-flex">
