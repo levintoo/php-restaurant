@@ -8,9 +8,9 @@
 <section class="food-search">
     <div class="container">
 
-        <h2 class="text-center text-white">Add category</h2>
+        <h2 class="text-center text-white">Edit category</h2>
 
-        <form action="http://localhost:7882/wowfood/admin/action/add-category.php" method="POST" class="order" enctype="multipart/form-data">
+        <form action="" method="POST" class="order" enctype="multipart/form-data">
             <fieldset>
                 <legend></legend>
 
