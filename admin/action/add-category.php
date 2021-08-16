@@ -30,7 +30,11 @@ if (isset($_POST['submit'])) {
             $count = mysqli_num_rows($result);    
             echo $image_id;
         }while($count ==1);
-
+        // name change alt 
+        // $image_name = $_FILES['image']['name'];
+        // $ext = end(explode('.',$image_name));
+        // $image_name = "FOod_categ".rand(000, 999).'.'.$ext;
+        // end of name change alt
         $image_name = $image_id.'.' . pathinfo($_FILES['image']['name'],PATHINFO_EXTENSION);
 
         $source_path = $_FILES['image']['tmp_name'];
