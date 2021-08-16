@@ -17,8 +17,21 @@ if (isset($_POST['submit'])) {
     }
 
     if (isset($_FILES['image']['name'])){
+        $image_id = 0;
 
-        $image_name = $_FILES['image']['name'];
+        $query = "SELECT * FROM tbl_category WHERE id ='$image_id'";
+        $result = mysqli_query($db, $query);
+        $count = mysqli_num_rows($result);
+
+        do{
+            $image_id = $image_id + 1;
+            $query = "SELECT * FROM tbl_category WHERE id ='$image_id'";
+            $result = mysqli_query($db, $query);
+            $count = mysqli_num_rows($result);    
+            echo $image_id;
+        }while($count ==1);
+
+        $image_name = $image_id.'.' . pathinfo($_FILES['image']['name'],PATHINFO_EXTENSION);
 
         $source_path = $_FILES['image']['tmp_name'];
 
@@ -30,13 +43,13 @@ if (isset($_POST['submit'])) {
             $_SESSION['upload'] = '<div class="alert alert-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
             <strong class="me-5">Failed to upload image</strong>
             </div>';
-            header('location: http://localhost:7882/wowfood/admin/add-category.php');
-      
+            header('location: http://localhost:7882/wowfood/admin/manage-category.php');
+
         }else{
-            die();
+
         }
     }else{
-        $image_name = "";
+        $image_name= "";
     }
 
     $query = "SELECT * FROM tbl_category WHERE title ='$title'";
