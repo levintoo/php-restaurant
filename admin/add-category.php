@@ -28,7 +28,7 @@
                 <div class="order-label text-danger">Featured</div>
                 <div class="order-label input-responsive">
                     Yes
-                    <input value="Nes" type="radio" name="featured" placeholder="" class="mx-4">
+                    <input value="Yes" type="radio" name="featured" placeholder="" class="mx-4">
 
                     No
                     <input value="No" type="radio" name="featured" placeholder="" class="mx-2">

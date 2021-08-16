@@ -12,6 +12,10 @@
                 echo $_SESSION['nocateg'];
                 unset($_SESSION['nocateg']);
             } ?>
+            <?php if (isset($_SESSION['deletecateg'])) {
+                echo $_SESSION['deletecateg'];
+                unset($_SESSION['deletecateg']);
+            } ?>
             <a href="http://localhost:7882/wowfood/admin/add-category.php" class="btn-sm btn-info text-light p-2">Add Category</a>
         </div>
         <table>
@@ -64,7 +68,7 @@
                         <td class="p-2 ">
                             <span class="d-flex flex-wrap">
                                 <a href="http://localhost:7882/wowfood/admin/update-category.php?id=<?php echo $id?>" class="btn-sm btn-success p-2">Update Category</a>
-                                <a href="http://localhost:7882/wowfood/admin/action/delete-category.php?id=<?php echo $id; ?>" class="me-2 btn-sm btn-danger p-2">Delete Category</a>
+                                <a href="http://localhost:7882/wowfood/admin/action/delete-category.php?id=<?php echo $id; ?>" class="me-2 btn-sm btn-danger p-2 " disabled>Delete Category</a>
 
                             </span>
                         </td>

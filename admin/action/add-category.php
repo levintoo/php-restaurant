@@ -4,16 +4,15 @@ include('../../config/constants.php');
 if (isset($_POST['submit'])) {
     $title = mysqli_real_escape_string($db, $_POST['title']);
 
-
     if (isset($_POST['featured'])) {
         $featured = mysqli_real_escape_string($db, $_POST['featured']);
     } else {
-        $featured = "no";
+        $featured = "No";
     }
     if (isset($_POST['active'])) {
         $active = mysqli_real_escape_string($db, $_POST['active']);
     } else {
-        $active = "no";
+        $active = "No";
     }
 
     if (isset($_FILES['image']['name'])){
@@ -66,7 +65,9 @@ if (isset($_POST['submit'])) {
         header('location: http://localhost:7882/wowfood/admin/manage-category.php'); 
     }
     else {
-        $query = "INSERT into tbl_category (title, image_name, featured, active) VALUES ('$title', '$image_name', '$featured', '$active')";
+
+        
+        $query = "INSERT into tbl_category (id, title, image_name, featured, active) VALUES ('$image_name','$title', '$image_name', '$featured', '$active')";
         $result = mysqli_query($db, $query);
     
         if ($result == true) {
