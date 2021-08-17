@@ -13,9 +13,14 @@ if ($count ==0){
     header("Location: http://localhost:7882/wowfood/admin/manage-category.php");
 
 }else{
-    
+        $data = mysqli_fetch_assoc($result);
+        $title = $data['title'];
+        $image_name = $data['image_name'];
+        $featured = $data['featured'];
+        $active = $data['active'];
 }
 ?>
+
 <style>
     .food-search {
         height: 100vh;
@@ -32,7 +37,10 @@ if ($count ==0){
                 <legend></legend>
 
                 <div class="order-label">Title</div>
-                <input type="text" name="title" placeholder="" class="input-responsive" >
+                <input type="text" name="title" placeholder="" value="<?php echo $title; ?>" class="input-responsive" >
+
+                <div class="order-label">Image Name</div>
+                <input type="text" name="title" placeholder="" value="<?php echo $image_name; ?>" class="input-responsive" disabled>
 
                 <div class="order-label">Image</div>
                 <input type="file" name="image" placeholder="" class="input-responsive" >
