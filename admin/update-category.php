@@ -1,4 +1,21 @@
-<?php include('./partials/menu.php') ?>
+<?php include('./partials/menu.php') ;;
+$id = $_GET['id'];
+
+
+$query = "SELECT * FROM tbl_category WHERE id =$id";
+$result = mysqli_query($db, $query);
+$count = mysqli_num_rows($result);
+
+if ($count ==0){
+    $_SESSION['nocateg'] = '<div class="alert text-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+    <strong class="mx-2">Category Not available</strong>
+    </div>';
+    header("Location: http://localhost:7882/wowfood/admin/manage-category.php");
+
+}else{
+    
+}
+?>
 <style>
     .food-search {
         height: 100vh;
@@ -14,15 +31,11 @@
             <fieldset>
                 <legend></legend>
 
-                <?php if (isset($_SESSION['upload'])) {
-                    echo $_SESSION['upload'];
-                    unset($_SESSION['upload']);
-                } ?>
                 <div class="order-label">Title</div>
-                <input type="text" name="title" placeholder="" class="input-responsive" required>
+                <input type="text" name="title" placeholder="" class="input-responsive" >
 
                 <div class="order-label">Image</div>
-                <input type="file" name="image" placeholder="" class="input-responsive" required>
+                <input type="file" name="image" placeholder="" class="input-responsive" >
 
                 <!-- //featured -->
                 <div class="order-label text-danger">Featured</div>
@@ -55,3 +68,5 @@
 
 
 <?php include('./partials/footer.php'); ?>
+
+
