@@ -1,33 +1,31 @@
-<?php include('./partials/menu.php') ;;
+<?php include('./partials/menu.php');;
 $id = $_GET['id'];
 
 
 $query = "SELECT * FROM tbl_category WHERE id =$id";
 $result = mysqli_query($db, $query);
-if ($result == true){
+if ($result == true) {
     $count = mysqli_num_rows($result);
 
-if ($count ==0){
-    $_SESSION['nocateg'] = '<div class="alert text-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+    if ($count == 0) {
+        $_SESSION['nocateg'] = '<div class="alert text-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
     <strong class="mx-2">Category Not available</strong>
     </div>';
-    header("Location: http://localhost:7882/wowfood/admin/manage-category.php");
-
-}else{
+        header("Location: http://localhost:7882/wowfood/admin/manage-category.php");
+    } else {
         $data = mysqli_fetch_assoc($result);
         $title = $data['title'];
         $image_name = $data['image_name'];
         $featured = $data['featured'];
         $active = $data['active'];
-}
-}else{
-
+    }
+} else {
 }
 ?>
 
 <style>
     .food-search {
-        height: 100vh;
+        height: 110vh;
     }
 </style>
 <!-- fOOD sEARCH Section Starts Here -->
@@ -41,13 +39,12 @@ if ($count ==0){
                 <legend></legend>
 
                 <div class="order-label">Title</div>
-                <input type="text" name="title" placeholder="" value="<?php echo $title; ?>" class="input-responsive" >
-
-                <div class="order-label">Image Name</div>
-                <input type="text" name="title" placeholder="" value="<?php echo $image_name; ?>" class="input-responsive" disabled>
+                <input type="text" name="title" placeholder="" value="<?php echo $title; ?>" class="input-responsive">
 
                 <div class="order-label">Image</div>
-                <input type="file" name="image" placeholder="" class="input-responsive" >
+                <img src="../images/category/<?php echo $image_name; ?>" alt="Unavailable" height="100px">
+                <div class="order-label">Image</div>
+                <input type="file" name="image" placeholder="" class="input-responsive">
 
                 <!-- //featured -->
                 <div class="order-label text-danger">Featured : <span class="text-secondary"><?php echo $featured; ?></span></div>
@@ -80,5 +77,3 @@ if ($count ==0){
 
 
 <?php include('./partials/footer.php'); ?>
-
-
