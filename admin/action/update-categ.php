@@ -16,28 +16,45 @@ if (isset($_POST['active'])) {
     $active = "No";
 }
 
-$query = "SELECT * FROM tbl_category WHERE title='$title'";
-$result = mysqli_query($db, $query);
-if ($result == true) {
-    $count = mysqli_num_rows($result);
-    if ($count == 1) {
-        header("Location: http://localhost:7882/wowfood/admin/manage-category.php");
-        $_SESSION['nocateg'] = '<div class="alert text-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
-        <strong class="mx-2">Category already exists</strong>
-        </div>';
-    } else {
-        
+if (isset($_FILES['image']['name'])) {
+    $destination_path = "../../images/category/" . $image_name;
 
-        $query = "UPDATE tbl_category  SET title='$title', featured='$featured', active='$active' WHERE id=$id";
-        $result = mysqli_query($db, $query);
+    if (file_exists($destination_path)) {
+        unlink($destination_path);
+        $source_path = $_FILES['image']['tmp_name'];
 
-        if ($result == true) {
-            $_SESSION['updatedcateg'] = '<div class="alert text-success alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
-            <strong class="mx-2">Category updated</strong>
-            </div>';
-            header("Location: http://localhost:7882/wowfood/admin/manage-category.php");
+        $image_id = $id;
+        $image_name = $image_id . '.' . pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+
+        $upload = move_uploaded_file($source_path, $destination_path);
+        if ($upload == true) {
         } else {
+        }
+    } else {
+        $source_path = $_FILES['image']['tmp_name'];
 
+        $image_id = $id;
+        $image_name = $image_id . '.' . pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+        $upload = move_uploaded_file($source_path, $destination_path);
+        if ($upload == true) {
+        } else {
         }
     }
+} else {
+    $image_name = "";
+}
+
+$query = "UPDATE tbl_category  SET title='$title', featured='$featured', active='$active', image_name='$image_name' WHERE id=$id";
+$result = mysqli_query($db, $query);
+
+if ($result == true) {
+    $_SESSION['updatedcateg'] = '<div class="alert text-success alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+            <strong class="mx-2">Category updated</strong>
+            </div>';
+    header("Location: http://localhost:7882/wowfood/admin/manage-category.php");
+} else {
+    $_SESSION['updatedcateg'] = '<div class="alert text-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+    <strong class="mx-2">Failed to update categoryed</strong>
+    </div>';
+header("Location: http://localhost:7882/wowfood/admin/manage-category.php");
 }

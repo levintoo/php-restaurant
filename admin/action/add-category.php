@@ -43,11 +43,6 @@ if (isset($_POST['submit'])) {
         $upload = move_uploaded_file($source_path, $destination_path);
     
         if ($upload==false) {
-            $_SESSION['upload'] = '<div class="alert alert-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
-            <strong class="me-5">Failed to upload image</strong>
-            </div>';
-            header('location: http://localhost:7882/wowfood/admin/manage-category.php');
-
         }else{
 
         }
