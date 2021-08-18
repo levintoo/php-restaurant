@@ -22,7 +22,7 @@
                 <input type="text" name="title" placeholder="" class="input-responsive" required>
 
                 <div class="order-label">Image</div>
-                <input type="file" name="image" placeholder="" class="input-responsive" required>
+                <input type="file" name="image" placeholder="" class="input-responsive" >
                
                 <!-- //featured -->
                 <div class="order-label text-danger">Featured</div>

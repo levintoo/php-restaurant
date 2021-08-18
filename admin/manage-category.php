@@ -16,6 +16,10 @@
                 echo $_SESSION['deletecateg'];
                 unset($_SESSION['deletecateg']);
             } ?>
+             <?php if (isset($_SESSION['updatedcateg'])) {
+                echo $_SESSION['updatedcateg'];
+                unset($_SESSION['updatedcateg']);
+            } ?>
             <a href="http://localhost:7882/wowfood/admin/add-category.php" class="btn-sm btn-info text-light p-2">Add Category</a>
         </div>
         <table>
