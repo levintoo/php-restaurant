@@ -1,5 +1,11 @@
 <?php include('./partials/menu.php');;
 $id = $_GET['id'];
+if ($id == false){
+    $_SESSION['nocateg'] = '<div class="alert text-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+    <strong class="mx-2">Category Not available</strong>
+    </div>';
+        header("Location: http://localhost:7882/wowfood/admin/manage-category.php");
+}
 
 
 $query = "SELECT * FROM tbl_category WHERE id =$id";
