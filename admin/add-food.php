@@ -1,7 +1,7 @@
 <?php include('./partials/menu.php') ?>
 <style>
     .food-search {
-        height: 115vh;
+        height: 120vh;
     }
 </style>
 <!-- fOOD sEARCH Section Starts Here -->
@@ -17,11 +17,11 @@
                 <input type="text" name="title" placeholder="" class="input-responsive" required>
 
                 <div class="order-label">Description</div>
-                <input type="text" name="title" placeholder="" class="input-responsive" required>
+                <textarea type="text" name="description" placeholder="" class="input-responsive rounded-1" required></textarea>
 
 
                 <div class="order-label">Price</div>
-                <input type="text" name="title" placeholder="" class="input-responsive" required>
+                <input type="text" name="price" placeholder="" class="input-responsive" required>
 
 
                 <div class="order-label">Image</div>

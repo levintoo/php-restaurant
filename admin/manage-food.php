@@ -3,7 +3,10 @@
 <div class="main-content">
 <div class="wrapper row py-lg-4 py-md-3 col-md-12">
             <p class="fs-2"><strong>Manage Food</strong></p>
-
+            <?php if (isset($_SESSION['addfood'])) {
+                echo $_SESSION['addfood'];
+                unset($_SESSION['addfood']);
+            } ?>
             <div class="mb-3">
         <a href="<?php SITEURL ?>add-food.php" class="btn-sm btn-info text-light p-2">Add Food</a>
         </div>
