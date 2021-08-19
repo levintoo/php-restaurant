@@ -26,7 +26,32 @@ if ($result == true) {
             <strong class="me-5">Food already exists</strong></div>';
             header('location: http://localhost:7882/wowfood/admin/manage-food.php');
     }else{
-        $query = "INSERT INTO tbl_food (title , description , price, active ,featured) VALUES ('$title', '$description', $price, '$active', '$featured')";
+
+
+if(isset($_FILES['image']['name'])){
+    $image_name = $title.'.' . pathinfo($_FILES['image']['name'],PATHINFO_EXTENSION);
+
+    $source_path = $_FILES['image']['tmp_name'];
+
+    $destination_path = "../../images/food/".$image_name;
+
+    $upload = move_uploaded_file($source_path, $destination_path);
+    if ($upload == true){
+        echo $image_name;
+    }else{
+
+        $image_name = "";
+    }
+}else{
+    $image_name = "";
+}
+
+
+
+
+
+
+        $query = "INSERT INTO tbl_food (title , description , price, active ,featured, image_name) VALUES ('$title', '$description', $price, '$active', '$featured','$image_name')";
         $result = mysqli_query($db, $query);
 
         if ($result == true) {
