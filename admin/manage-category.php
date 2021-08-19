@@ -29,6 +29,7 @@
                 <th class="p-2">Image</th>
                 <th class="p-2">Featured</th>
                 <th class="p-2">Active</th>
+                <th class="p-2">Actions</th>
             </tr>
 
             <?php
@@ -39,9 +40,9 @@
 
                 $sn = 1;
                 if ($count = 0) {
-                    $_SESSION['nocateg'] = '<div class="p-0 mb-3 alert text-danger alert-dismissible fade show m-0 w-auto d-flex h-auto align-items-center" role="alert">
-        <strong class=" p-0">No categories found</strong>
-        </div>';
+                    $_SESSION['nocateg'] = '<div class="alert alert-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+                    <strong class="mx-2">No categries found</strong>
+                    </div>';
                 } else {
 
                     while ($row = mysqli_fetch_assoc($result)) {

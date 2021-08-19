@@ -5,7 +5,7 @@
             <p class="fs-2"><strong>Manage Food</strong></p>
 
             <div class="mb-3">
-        <a href="" class="btn-sm btn-info text-light p-2">Add Food</a>
+        <a href="<?php SITEURL ?>add-food.php" class="btn-sm btn-info text-light p-2">Add Food</a>
         </div>
         <table>
             <tr class="border-bottom">

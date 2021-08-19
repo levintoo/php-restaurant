@@ -1,29 +1,32 @@
 <?php include('./partials/menu.php') ?>
 <style>
     .food-search {
-        height: 100vh;
+        height: 115vh;
     }
 </style>
 <!-- fOOD sEARCH Section Starts Here -->
 <section class="food-search">
     <div class="container">
 
-        <h2 class="text-center text-white">Add category</h2>
+        <h2 class="text-center text-white">Add Food</h2>
 
-        <form action="http://localhost:7882/wowfood/admin/action/add-category.php" method="POST" class="order" enctype="multipart/form-data">
+        <form action="http://localhost:7882/wowfood/admin/action/add-food.php" method="POST" class="order" enctype="multipart/form-data">
             <fieldset>
                 <legend></legend>
-
-               <?php if (isset($_SESSION['upload'])) {
-                echo $_SESSION['upload'];
-                unset($_SESSION['upload']);
-                } ?>
                 <div class="order-label">Title</div>
                 <input type="text" name="title" placeholder="" class="input-responsive" required>
 
+                <div class="order-label">Description</div>
+                <input type="text" name="title" placeholder="" class="input-responsive" required>
+
+
+                <div class="order-label">Price</div>
+                <input type="text" name="title" placeholder="" class="input-responsive" required>
+
+
                 <div class="order-label">Image</div>
-                <input type="file" name="image" placeholder="" class="input-responsive" >
-               
+                <input type="file" name="image" placeholder="" class="input-responsive">
+
                 <!-- //featured -->
                 <div class="order-label text-danger">Featured</div>
                 <div class="order-label input-responsive">

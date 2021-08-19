@@ -1,3 +1,4 @@
+<?php include('./config/constants.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,6 +60,10 @@
             <form action="http://localhost:7882/wowfood/php/insert-user.php" class="order" method="POST">
                 
                     <legend>User Details</legend>
+                    <?php if (isset($_SESSION['emailtaken'])) {
+                        echo $_SESSION['emailtaken'];
+                        unset($_SESSION['emailtaken']);
+                    } ?>
                     <div class="order-label">Full Name</div>
                     <input type="text" name="full-name" placeholder="" class="input-responsive" required>
 

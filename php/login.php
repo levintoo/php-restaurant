@@ -1,17 +1,20 @@
  <?php
 
-$db = mysqli_connect("localhost", "levo", "levoo.me", "food_order");
+include('../config/constants.php') ;
 $email = mysqli_real_escape_string($db, $_POST['email']);
 $pass = mysqli_real_escape_string($db, $_POST['password']);
-$pass = hash('sha512', $pass);
+$pass = md5($pass);
 
 $query = "SELECT id FROM tbl_customer WHERE email= '$email' AND password= '$pass'";
 $result = mysqli_query($db, $query);
 if(mysqli_num_rows($result) == 1){
-    $_SESSION['tbl_customer'] = mysqli_fetch_array($result)[0];
-    header("Location: http://localhost:7882/wowfood/index.php");
+    $_SESSION['customer'] = $email;
+    header('location: http://localhost:7882/wowfood/index.php'); 
 }
 else{
-    echo"not logged in";
+    $_SESSION['customerlogin'] = '<div class="alert text-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+    <strong class="me-5">Error check the details</strong>
+    </div>';
+    header('location: http://localhost:7882/wowfood/login.php');
 }
 ?>
