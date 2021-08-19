@@ -27,18 +27,17 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse menu text-right" id="navbarText">
-                <div class="navbar-nav me-auto mb-2 mb-lg-0 "></div>
-                <div class="navbar-nav me-auto mb-2 mb-lg-0 ">            
+                <div class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <?php if (isset($_SESSION['customerlogin'])) {
-                echo $_SESSION['customerlogin'];
-                unset($_SESSION['customerlogin']);
-            } ?></div>
+                        echo $_SESSION['customerlogin'];
+                        unset($_SESSION['customerlogin']);
+                    } ?></div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item">
                         <a href="http://localhost:7882/wowfood/index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="categories.html">Categories</a>
+                        <a href="http://localhost:7882/wowfood/categories.html">Categories</a>
                     </li>
                     <li class="nav-item">
                         <a href="foods.html">Foods</a>
@@ -46,24 +45,35 @@
                     <li class="nav-item">
                         <a href="#">Contact</a>
                     </li>
+                    
 
                     <?php
 
- if (isset($_SESSION['customer'])) {
-    echo '<li class="user">
-                        <img src="./images/person.jpg" alt="" class="rounded-circle" width="50rem" height="50rem">
-                    </li>
-                    <li class="guest nav-item">
-                        <a href="http://localhost:7882/wowfood/php/log-out.php" class="badge bg-success p-2">logout</a>
-                    </li>';
-}else{
-    echo '<li class="guest nav-item">
-    <a href="http://localhost:7882/wowfood/login.php" class="badge bg-success p-2">login</a>
-</li>
-<li class="guest nav-item">
-    <a href="http://localhost:7882/wowfood/register.php" class="btn-sm btn-danger p-2">Register</a>
-</li>';
-} 
+                    if (isset($_SESSION['customer'])) {
+                        $email = $_SESSION['customer'];
+
+                        $query = "SELECT * FROM tbl_customer WHERE email= '$email'";
+                        $result = mysqli_query($db, $query);
+                        $row = mysqli_fetch_assoc($result);
+                        $username = $row['full_name'];
+                        echo '  
+                        <li class="user">
+                        <a href="http://localhost:7882/wowfood/php/log-out.php" class="badge text-success bg-none p-2">'.$username.'</a>
+                        </li>
+                        
+                        <li class="guest nav-item">
+                            <a href="http://localhost:7882/wowfood/php/log-out.php" class="badge bg-success p-2">logout</a>
+                            </li>
+                          
+                    ';
+                    } else {
+                        echo '<li class="guest nav-item">
+                            <a href="http://localhost:7882/wowfood/login.php" class="badge bg-success p-2">login</a>
+                        </li>
+                        <li class="guest nav-item">
+                            <a href="http://localhost:7882/wowfood/register.php" class="btn-sm btn-danger p-2">Register</a>
+                        </li>';
+                    }
 
 
                     ?>
