@@ -6,6 +6,10 @@
             <?php if (isset($_SESSION['addfood'])) {
                 echo $_SESSION['addfood'];
                 unset($_SESSION['addfood']);
+            } 
+            if (isset($_SESSION['deletefood'])) {
+                echo $_SESSION['deletefood'];
+                unset($_SESSION['deletefood']);
             } ?>
             <div class="mb-3">
         <a href="<?php SITEURL ?>add-food.php" class="btn-sm btn-info text-light p-2">Add Food</a>
