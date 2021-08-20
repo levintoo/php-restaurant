@@ -1,6 +1,5 @@
 <?php
 include('../../config/constants.php');
-$db = mysqli_connect("localhost", "levo", "levoo.me", "food_order");
 $fullname = mysqli_real_escape_string($db, $_POST['full-name']);
 $username = mysqli_real_escape_string($db, $_POST['username']);
 $pass = md5(mysqli_real_escape_string($db, $_POST['password']));
