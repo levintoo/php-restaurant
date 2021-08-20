@@ -19,7 +19,21 @@
                 <div class="order-label">Description</div>
                 <textarea type="text" name="description" placeholder="" class="input-responsive rounded-1" required></textarea>
 
-
+                <div class="order-label">Categories</div>
+                <select type="text" name="category" placeholder="" class="input-responsive" required>
+                    <?php 
+                    $query = "SELECT * FROM tbl_category WHERE active ='Yes'";
+                    $result = mysqli_query($db, $query);
+                    if ($result == true){
+                        while($row = mysqli_fetch_array($result)){
+                            $categid= $row['id'];
+                            $categ= $row['title'];
+                            ?>
+                            <option value="<?php echo $categid;?>"><?php echo $categ; ?></option><?php 
+                        }
+                    }
+                    ?>
+                </select>
                 <div class="order-label">Price</div>
                 <input type="text" name="price" placeholder="" class="input-responsive" required>
 

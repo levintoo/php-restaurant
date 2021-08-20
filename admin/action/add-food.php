@@ -4,6 +4,7 @@ include('../../config/constants.php');
 $title = mysqli_real_escape_string($db, $_POST['title']);
 $description = mysqli_real_escape_string($db, $_POST['description']);
 $price = mysqli_real_escape_string($db, $_POST['price']);
+$category = mysqli_real_escape_string($db, $_POST['category']);
 
 if (isset($_POST['featured'])) {
     $featured = mysqli_real_escape_string($db, $_POST['featured']);
@@ -51,7 +52,7 @@ if(isset($_FILES['image']['name'])){
 
 
 
-        $query = "INSERT INTO tbl_food (title , description , price, active ,featured, image_name) VALUES ('$title', '$description', $price, '$active', '$featured','$image_name')";
+        $query = "INSERT INTO tbl_food (title , description , price, active ,featured, image_name, category_id) VALUES ('$title', '$description', $price, '$active', '$featured','$image_name', '$category')";
         $result = mysqli_query($db, $query);
 
         if ($result == true) {
@@ -59,7 +60,9 @@ if(isset($_FILES['image']['name'])){
             <strong class="me-5">Food added successfully</strong></div>';
             header('location: http://localhost:7882/wowfood/admin/manage-food.php'); 
         }else{
-
+            $_SESSION['addfood'] = '<div class="alert alert-danger alert-dismissible fade show p-2 w-auto d-flex h-auto align-items-center" role="alert">
+            <strong class="me-5">Failed to add food</strong></div>';
+            header('location: http://localhost:7882/wowfood/admin/manage-food.php'); 
         }
     }
 }else{
