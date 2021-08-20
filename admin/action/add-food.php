@@ -1,6 +1,6 @@
 <?php
 include('../../config/constants.php');
-
+include('../partials/login-check.php');
 $title = mysqli_real_escape_string($db, $_POST['title']);
 $description = mysqli_real_escape_string($db, $_POST['description']);
 $price = mysqli_real_escape_string($db, $_POST['price']);

@@ -1,5 +1,6 @@
 <?php
 include('../../config/constants.php');
+include('../partials/login-check.php');
 $fullname = mysqli_real_escape_string($db, $_POST['full-name']);
 $username = mysqli_real_escape_string($db, $_POST['username']);
 $pass = md5(mysqli_real_escape_string($db, $_POST['password']));

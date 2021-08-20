@@ -59,9 +59,11 @@
                 <td class="p-2"><?php echo $price; ?></td>
                 <td class="p-2"><?php echo $featured; ?></td>
                 <td class="p-2"><?php echo $active; ?></td>
-                <td class="p-2 flex-wrap d-flex">
+                <td class="p-2 ">
+                    <span class="flex-wrap d-flex">
                     <a href="" class="btn-sm btn-success p-2">Update Food</a>
                     <a href="<?php SITEURL?>action/delete-food.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-sm btn-danger p-2">Delete Food</a>
+                    </span>
                 </td>
             </tr>
                         <?php

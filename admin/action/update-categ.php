@@ -1,5 +1,6 @@
 <?php
 include('../../config/constants.php');
+include('../partials/login-check.php');
 $id = $_GET['id'];
 
 $title = mysqli_real_escape_string($db, $_POST['title']);

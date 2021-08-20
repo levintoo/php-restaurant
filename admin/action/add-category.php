@@ -1,5 +1,5 @@
 <?php
-
+include('../partials/login-check.php');
 include('../../config/constants.php');
 if (isset($_POST['submit'])) {
     $title = mysqli_real_escape_string($db, $_POST['title']);

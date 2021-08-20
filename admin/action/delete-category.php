@@ -1,5 +1,5 @@
 <?php
-
+include('../partials/login-check.php');
 include('../../config/constants.php');
 //get id of category to delete
 
