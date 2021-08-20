@@ -20,6 +20,18 @@
             <th class="p-2">Active</th>
             <th class="p-2">Action</th>
             </tr>
+            <?php 
+            $query = "SELECT * FROM tbl_food";
+            $result = mysqli_query($db, $query);
+            if ($result == true){
+                $count = mysqli_num_rows($result);
+                if ($count == 0){
+                    echo '<p class="text-danger">error no food found</p>';
+                }else{
+
+                }
+            }
+            ?>
             <tr>
                 <td class="p-2">1</td>
                 <td class="p-2">Levoo</td>
