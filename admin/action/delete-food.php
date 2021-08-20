@@ -18,7 +18,8 @@ if (isset($_GET['id']) && isset($_GET['image_name'])) {
                 </div>';
                 header('location: http://localhost:7882/wowfood/admin/manage-food.php');
             }else{
-                echo "del";
+                $path = "../../images/food/$image_name";
+                echo '<img src="$path">';
             }
         }
 }
