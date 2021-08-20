@@ -13,48 +13,25 @@
         <table>
             <tr class="border-bottom">
             <th class="p-2">S.N.</th>
-            <th class="p-2">Full Name</th>
-            <th class="p-2">Username</th>
-            <th class="p-2">Actions</th>
+            <th class="p-2">Title</th>
+            <th class="p-2">Image</th>
+            <th class="p-2">Price</th>
+            <th class="p-2">Featured</th>
+            <th class="p-2">Active</th>
+            <th class="p-2">Action</th>
             </tr>
             <tr>
                 <td class="p-2">1</td>
                 <td class="p-2">Levoo</td>
                 <td class="p-2">Levo</td>
+                <td class="p-2">Levo</td>
+                <td class="p-2">Levo</td>
+                <td class="p-2">Levo</td>
                 <td class="p-2 flex-wrap d-flex">
-                    <a href="" class="btn-sm btn-success p-2">Update Admin</a>
-                    <a href="" class="btn-sm btn-danger p-2">Delete Admin</a>
+                    <a href="" class="btn-sm btn-success p-2">Update Food</a>
+                    <a href="" class="btn-sm btn-danger p-2">Delete Food</a>
                 </td>
             </tr>
-            <tr>
-                <td class="p-2">2</td>
-                <td class="p-2">Levoo</td>
-                <td class="p-2">Levo</td>
-                <td class="p-2">
-                    <a href="" class="btn-sm btn-success p-2">Update Admin</a>
-                    <a href="" class="btn-sm btn-danger p-2">Delete Admin</a>
-                   
-                </td>
-            </tr> <tr>
-                <td class="p-2">3</td>
-                <td class="p-2">Levoo</td>
-                <td class="p-2">Levo</td>
-                <td class="p-2">
-                    <a href="" class="btn-sm btn-success p-2">Update Admin</a>
-                    <a href="" class="btn-sm btn-danger p-2">Delete Admin</a>
-                   
-                </td>
-            </tr> <tr>
-                <td class="p-2">4</td>
-                <td class="p-2">Levoo</td>
-                <td class="p-2">Levo</td>
-                <td class="p-2">
-                    <a href="" class="btn-sm btn-success p-2">Update Admin</a>
-                    <a href="" class="btn-sm btn-danger p-2">Delete Admin</a>
-                   
-                </td>
-            </tr>
-            
         </table>
         </div>
 </div>
