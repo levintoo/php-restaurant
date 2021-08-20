@@ -12,6 +12,7 @@
 
         <form action="http://localhost:7882/wowfood/admin/action/add-food.php" method="POST" class="order" enctype="multipart/form-data">
             <fieldset>
+                
                 <legend></legend>
                 <div class="order-label">Title</div>
                 <input type="text" name="title" placeholder="" class="input-responsive" required>
