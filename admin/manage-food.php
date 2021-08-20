@@ -45,7 +45,13 @@
                         <tr>
                 <td class="p-2"><?php echo $sn++; ?></td>
                 <td class="p-2"><?php echo $title; ?></td>
-                <td class="p-2"><?php echo $image_name; ?></td>
+                <td class="p-2"><?php
+                    if (!$image_name== ""){
+                        echo '<img src="'.SITEURL.'images/food/'.$image_name.'" width="100px" alt="'.$image_name.'">';
+                    }else{
+                        echo '<p class="text-danger">Unavailable</p>';
+                    }   
+                ?></td>
                 <td class="p-2"><?php echo $price; ?></td>
                 <td class="p-2"><?php echo $featured; ?></td>
                 <td class="p-2"><?php echo $active; ?></td>
