@@ -64,7 +64,7 @@ if(isset($_GET['id'])){
                             $categid= $row['id'];
                             $categ= $row['title'];
                             ?>
-                            <option value="<?php echo $categid;?>"><?php echo $categ; ?></option><?php 
+                            <option <?php if($categid = $category_id){echo "selected";} ?> value="<?php echo $categid;?>"><?php echo $categ; ?></option><?php 
                         }
                     }
                     ?>
