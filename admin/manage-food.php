@@ -24,6 +24,7 @@
             <th class="p-2">Title</th>
             <th class="p-2">Image</th>
             <th class="p-2">Price</th>
+            <th class="p-2">Category</th>
             <th class="p-2">Featured</th>
             <th class="p-2">Active</th>
             <th class="p-2">Action</th>
@@ -48,6 +49,7 @@
                         $description = $row['description'];
                         $featured = $row['featured'];
                         $active = $row['active'];
+                        $category = $row['category_id'];
 
                         ?>
                         <tr>
@@ -61,6 +63,19 @@
                     }   
                 ?></td>
                 <td class="p-2"><?php echo $price; ?></td>
+                <td class="p-2">
+                    <?php
+                        $query1 = "SELECT * FROM tbl_category WHERE id =$category";
+                        $result1 = mysqli_query($db, $query1);
+                        $count1 = mysqli_num_rows($result1);
+                        if ($count1==1){
+                            $row1 = mysqli_fetch_assoc($result1);
+                            echo $categ= $row1['title'];
+                        }else{
+                            echo "<span class='text-secondary'>Unasigned</span>";
+                        } 
+                    ?>
+                </td>
                 <td class="p-2"><?php echo $featured; ?></td>
                 <td class="p-2"><?php echo $active; ?></td>
                 <td class="p-2 ">

@@ -45,7 +45,7 @@ if(isset($_GET['id'])){
 
         <h2 class="text-center text-white">Edit Food</h2>
 
-        <form action="" method="POST" class="order" enctype="multipart/form-data">
+        <form action="<?php SITEURL ?>action/update-food.php?id=<?php echo $id;?>" method="POST" class="order" enctype="multipart/form-data">
             <fieldset>
                 <legend></legend>
                 <div class="order-label">Title</div>
@@ -55,7 +55,7 @@ if(isset($_GET['id'])){
                 <textarea type="text" name="description" placeholder="" class="input-responsive rounded-1" required><?php echo $description; ?></textarea>
 
                 <div class="order-label">Categories</div>
-                <select type="text"  name="category" placeholder="" class="input-responsive" required>
+                <select type="text" name="category" placeholder="" class="input-responsive" required>
                     <?php 
                     $query = "SELECT * FROM tbl_category WHERE active ='Yes'";
                     $result = mysqli_query($db, $query);
@@ -64,7 +64,12 @@ if(isset($_GET['id'])){
                             $categid= $row['id'];
                             $categ= $row['title'];
                             ?>
-                            <option <?php if($categid = $category_id){echo "selected";} ?> value="<?php echo $categid;?>"><?php echo $categ; ?></option><?php 
+                            <?php if ($categid==$category_id){
+                                $selected = "selected";
+                            }else{
+                                $selected = "";
+                            };?>
+                            <option <?php echo $selected; ?> value="<?php echo $categid;?>"><?php echo $categ; ?></option><?php 
                         }
                     }
                     ?>
@@ -73,7 +78,7 @@ if(isset($_GET['id'])){
                 <input type="text" value="<?php echo $price; ?>" name="price" placeholder="" class="input-responsive" required>
 
                 <div class="order-label">Current Image</div>
-                <img src="../images/food/<?php echo $image_name; ?>" alt="Unavailable" height="100px">
+                <img src="../images/food/<?php echo $image_name; ?>" name="current_image" alt="Unavailable" height="100px">
                 <input type="file" name="image" placeholder="" class="input-responsive">
 
                 <!-- //featured -->
@@ -99,7 +104,6 @@ if(isset($_GET['id'])){
                 <input type="submit" name="submit" value="Add category" class="btn my-2 btn-primary px-2">
             </fieldset>
         </form>
-
     </div>
 </section>
 <!-- fOOD sEARCH Section Ends Here -->
