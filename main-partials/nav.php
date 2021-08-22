@@ -1,4 +1,4 @@
-<?php include('./config/constants.php') ?>
+<?php include('./config/constants.php')?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,16 +34,16 @@
                     } ?></div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item">
-                        <a href="http://localhost:7882/wowfood/index.php">Home</a>
+                        <a href="<?php echo SITEURL; ?>index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="http://localhost:7882/wowfood/categories.html">Categories</a>
+                        <a href="<?php echo SITEURL; ?>categories.php">Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a href="foods.html">Foods</a>
+                        <a href="<?php echo SITEURL; ?>foods.php">Foods</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Contact</a>
+                        <a href="<?php echo SITEURL; ?>#">Contact</a>
                     </li>
                     
 
