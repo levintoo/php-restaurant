@@ -42,7 +42,7 @@
                     <p class="food-detail">'.$description.'</p>
                     <br>
 
-                    <a href="#" class="btn btn-primary">Order Now</a>
+                    <a href="'.SITEURL.'order.php?id='.$id.'" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
     ';

@@ -31,17 +31,17 @@
                 <div class="navbar-nav me-auto mb-2 mb-lg-0 "></div>
                 <div class="navbar-nav me-auto mb-2 mb-lg-0 "></div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                    <li class="nav-item">
-                        <a href="http://localhost:7882/wowfood/index.php">Home</a>
+                <li class="nav-item">
+                        <a href="<?php echo SITEURL; ?>index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="categories.html">Categories</a>
+                        <a href="<?php echo SITEURL; ?>categories.php">Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a href="foods.html">Foods</a>
+                        <a href="<?php echo SITEURL; ?>foods.php">Foods</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Contact</a>
+                        <a href="<?php echo SITEURL; ?>#">Contact</a>
                     </li>
                     <!-- <li><img src="./images/person.jpg" alt="" class="rounded-circle" width="50rem" height="50rem"></li> -->
                 </ul>
@@ -57,11 +57,14 @@
 
             <h2 class="text-center text-white">Sign In</h2>
 
-            <form action="http://localhost:7882/wowfood/php/login.php" method="post" class="order">
+            <form action="<?php echo SITEURL;?>php/login.php" method="post" class="order">
                 <fieldset>
                     <?php if (isset($_SESSION['customerlogin'])) {
                         echo $_SESSION['customerlogin'];
                         unset($_SESSION['customerlogin']);
+                    }if (isset($_SESSION['loginuser'])) {
+                        echo $_SESSION['loginuser'];
+                        unset($_SESSION['loginuser']);
                     } ?>
                     <legend>User Details</legend>
                     <div class="order-label">Email</div>
@@ -70,7 +73,7 @@
                     <div class="order-label">Password</div>
                     <input type="password" name="password" placeholder="" class="input-responsive" required>
 
-                    <div class="order-label">Don't have an account yet? <a href="http://localhost:7882/wowfood/register.php"> Sign Up</a> </div>
+                    <div class="order-label">Don't have an account yet? <a href="<?php echo SITEURL;?>register.php"> Sign Up</a> </div>
 
                     <input type="submit" name="submit" value="login" class="btn btn-primary">
                 </fieldset>
