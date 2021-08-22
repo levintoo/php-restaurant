@@ -11,7 +11,6 @@
     <!-- Link our CSS file -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <!-- navbar section -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,7 +18,7 @@
             <a class="navbar-item" href="#">
                 <div class="logo">
                     <a href="#" title="Logo">
-                        <img src="images/logo.png" alt="Restaurant Logo" class="img-responsive">
+                        <img src="<?php echo SITEURL; ?>images/logo.png" alt="Restaurant Logo" class="img-responsive">
                     </a>
                 </div>
             </a>
@@ -58,20 +57,20 @@
                         $username = $row['full_name'];
                         echo '  
                         <li class="user">
-                        <a href="http://localhost:7882/wowfood/php/log-out.php" class="badge text-success bg-none p-2">'.$username.'</a>
+                        <a href="'.SITEURL.'php/log-out.php" class="badge text-success bg-none p-2">'.$username.'</a>
                         </li>
                         
                         <li class="guest nav-item">
-                            <a href="http://localhost:7882/wowfood/php/log-out.php" class="badge bg-success p-2">logout</a>
+                            <a href="'.SITEURL.'php/log-out.php" class="badge bg-success p-2">logout</a>
                             </li>
                           
                     ';
                     } else {
                         echo '<li class="guest nav-item">
-                            <a href="http://localhost:7882/wowfood/login.php" class="badge bg-success p-2">login</a>
+                            <a href="'.SITEURL.'login.php" class="badge bg-success p-2">login</a>
                         </li>
                         <li class="guest nav-item">
-                            <a href="http://localhost:7882/wowfood/register.php" class="btn-sm btn-danger p-2">Register</a>
+                            <a href="'.SITEURL.'register.php" class="btn-sm btn-danger p-2">Register</a>
                         </li>';
                     }
 
