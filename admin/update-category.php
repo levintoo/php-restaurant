@@ -44,7 +44,6 @@ if ($result == true) {
     <div class="container">
 
         <h2 class="text-center text-white">Edit category</h2>
-
         <form action="http://localhost:7882/wowfood/admin/action/update-categ.php?id=<?php echo $id; ?>" method="POST" class="order" enctype="multipart/form-data">
             <fieldset>
                 <legend></legend>
@@ -68,7 +67,7 @@ if ($result == true) {
 
                     No
                     <input value="No" type="radio" name="featured" placeholder="" class="mx-2" 
-                    <?php if ($featured == "No") {
+                    <?php if ($featured = "No") {
                                 echo "checked";
                          } else {} ?>>
                 </div>
@@ -78,13 +77,13 @@ if ($result == true) {
                 <div class="order-label input-responsive">
                     Yes
                     <input value="Yes" type="radio" name="active" placeholder="" class="mx-4" 
-                    <?php if ($active == "Yes") {
+                    <?php if ($active = "Yes") {
                         echo "checked";
                             } else {} ?>>
 
                     No
                     <input value="No" type="radio" name="active" placeholder="" class="mx-2" 
-                    <?php if ($active == "No") {
+                    <?php if ($active = "No") {
                         echo "checked";
                             } else {} ?>>
                 </div>

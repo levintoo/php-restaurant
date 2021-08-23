@@ -84,21 +84,21 @@ if(isset($_GET['id'])){
                 <!-- //featured -->
                 <div class="order-label text-danger">Featured</div>
                 <div class="order-label input-responsive">
-                    Yes
-                    <input value="Yes" <?php if($featured= "Yes"){  echo"checked";} ?> type="radio" name="featured" placeholder="" class="mx-4">
+                    Yes 
+                    <input value="Yes" <?php if($featured== "Yes"){ echo"checked";}?> type="radio" name="featured" placeholder="" class="mx-4">
 
                     No
-                    <input value="No" <?php if($featured= "No"){  echo"checked";} ?> type="radio" name="featured" placeholder="" class="mx-2">
+                    <input value="No" <?php if($featured== "No"){ echo"checked";}?> type="radio" name="featured" placeholder="" class="mx-2">
                 </div>
                 <!-- //end of featured -->
                 <!-- //active -->
                 <div class="order-label text-danger">Active</div>
                 <div class="order-label input-responsive">
                     Yes
-                    <input value="Yes" type="radio" <?php if($active= "Yes"){  echo"checked";} ?> name="active" placeholder="" class="mx-4">
+                    <input value="Yes" type="radio" <?php if($active == "Yes"){  echo"checked";} ?> name="active" placeholder="" class="mx-4">
 
                     No
-                    <input value="No" type="radio" <?php if($active= "No"){  echo"checked";} ?> name="active"  placeholder="" class="mx-2">
+                    <input value="No" type="radio" <?php if($active == "No"){  echo"checked";} ?> name="active"  placeholder="" class="mx-2">
                 </div>
                 <!-- //end of active -->
                 <input type="submit" name="submit" value="Add category" class="btn my-2 btn-primary px-2">
