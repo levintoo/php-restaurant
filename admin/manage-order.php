@@ -24,9 +24,10 @@
             <th class="p-2">Actions</th>
             </tr>
             <?php 
-                $query = "SELECT * FROM tbl_order";
+                $query = "SELECT * FROM tbl_order ORDER BY delivery_status ASC , id DESC ";
                 $result = mysqli_query($db,$query);
                 $count = mysqli_num_rows($result);
+                $sn=1;
                 while ($row= mysqli_fetch_assoc($result)){
                     $food= $row['food'];
                     $price = $row['price'];
@@ -43,7 +44,7 @@
 
                     ?>
             <tr>
-                <td class="p-2">1</td>
+                <td class="p-2"><?php echo $sn++ ;?></td>
                 <td class="p-2"><?php echo $food;?></td>
                 <td class="p-2"><?php echo $price;?></td>
                 <td class="p-2"><?php echo $qty;?></td>
@@ -51,14 +52,26 @@
                 <td class="p-2"><?php echo $order_date;?></td>
                 <td class="p-2"><?php echo $order_type;?></td>
                 <td class="p-2"><?php echo $delivery_date;?></td>
-                <td class="p-2"><?php echo $status;?></td>
+                <td class="p-2"><?php
+                 if($status ==0){
+                     echo "Received";
+                 }else if ($status ==1){
+                    echo "Pending";
+                 }else if ($status ==2){
+                    echo "Scheduled";
+                 }else if ($status ==3){
+                    echo "Cancelled";
+                 }else if ($status ==4){
+                    echo "Delivered";
+                 }
+                 ?>
+            </td>
                 <td class="p-2"><?php echo $customer_name;?></td>
                 <td class="p-2"><?php echo $contact;?></td>
                 <td class="p-2"><?php echo $address;?></td>
                 <td class="p-2"><?php echo $email;?></td>
                 <td class="p-2 flex-wrap d-flex">
-                    <a href="" class="btn-sm btn-success p-2">Update Order</a>
-                    <a href="" class="btn-sm btn-danger p-2">Delete Delete</a>
+                    <a href="" class="btn-sm btn-danger p-2">Cancel Order</a>
                 </td>
             </tr>
                     <?php

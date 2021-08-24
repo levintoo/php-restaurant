@@ -18,18 +18,18 @@ include('../config/constants.php') ;
 
    if ($order_type ==1){
     $delivery_date = "";
-    $status = "Ordered";
+    $status = 0;
    }else if ($order_type ==2){
     $delivery_date = $_POST['delivery_date'];
-    $status = "Scheduled order";
+    $status = 3;
    }
 
    if($delivery_date == ""){
     $delivery_date = "";
-    $status = "Ordered";
+    $status = 0;
    }else{
     $delivery_date = $_POST['delivery_date'];
-    $status = "Scheduled order";
+    $status = 3;
    }
 
     $vat = $food_price * 0.12;
