@@ -55,7 +55,7 @@
 
                 ?>        <div class="food-menu-box">
                 <div class="food-menu-img">
-                    <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                    <?php if ($image_name !== ""){ echo '<img src="images/food/'.$image_name.'" alt="'.$food_title.'" class="img-responsive img-curve">'; }else{ echo "No image";} ?>
                 </div>
     
                 <div class="food-menu-desc">
