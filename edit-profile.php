@@ -6,7 +6,6 @@ $email = $_SESSION['customer'];
 $query = "SELECT * FROM tbl_customer WHERE email= '$email'";
 $result = mysqli_query($db, $query);
 $row = mysqli_fetch_assoc($result);
-$id = $row['id'];
 $fullname = $row['full_name'];
 $contact = $row['contact'];
 $address = $row['address'];
@@ -21,19 +20,25 @@ $address = $row['address'];
             <fieldset>
 
                 <legend class="text-center">User</legend>
-                <div class="order-label">Full Name: <span class="input-responsive text-success"><?php echo $fullname; ?></span></div>
-
-                <div class="order-label">Email: <span class="input-responsive text-success"><?php echo $email; ?></span></div>
-
-                <div class="order-label">Phone Number: <span class="input-responsive text-success"><?php echo $contact; ?></span></div>
 
 
-                <div class="order-label">Adress : <span class="input-responsive text-success"><?php echo $address; ?></span></div>
+                <div class="order-label">Full Name: </div>
+                <input name = "fullname" type="text" class="input-responsive" value="<?php echo $fullname; ?>">
+
+                <div class="order-label">Email: </div>
+                <input class= "input-responsive" name = "email" type="email" value="<?php echo $email; ?>">
+
+                <div class="order-label">Phone Number: </div>
+                <input class="input-responsive" name = "email" type="text" value="<?php echo $contact; ?>">
 
 
-                <br>
-                <a type="submit" href="<?php echo SITEURL; ?>edit-profile.php?id=<?php echo $id; ?>" value="" class="btn btn-success">edit details</a>
-                <a type="submit" href="#" value="" class="btn btn-warning">check orders</a>
+                <div class="order-label">Adress : </div>
+                <input name = "address" type="text" value="<?php echo $address; ?>"class="input-responsive">
+
+               
+<br>
+                <input type="submit" value="submit" class="btn btn-primary">
+                <a type="submit" href="#"value="" class="btn btn-warning">check orders</a>
 
 
             </fieldset>
