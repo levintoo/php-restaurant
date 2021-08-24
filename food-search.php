@@ -3,7 +3,7 @@
     <section class="food-search text-center">
         <div class="container">
             
-            <h2>Foods on Your Search <a href="#" class="text-white">"Momo"</a></h2>
+            <h2>Foods on Your Search <a href="#" class="text-white">"<?php echo $_POST['search'] ?>"</a></h2>
 
         </div>
     </section>
@@ -16,7 +16,35 @@
         <div class="container">
             <h2 class="text-center">Food Menu</h2>
 
-            <div class="food-menu-box">
+            <?php $search = $_POST['search']; 
+            $query = "SELECT * FROM tbl_food WHERE title LIKE '%$search%' or description LIKE '%$search%'";
+            $result = mysqli_query($db, $query);
+            if ($result == true){
+                $count = mysqli_num_rows($result);
+                if ($count > 0) {
+                    while ($row = mysqli_fetch_array($result)){
+                        ?><div class="food-menu-box">
+                        <div class="food-menu-img">
+                            <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                        </div>
+        
+                        <div class="food-menu-desc">
+                            <h4><?php echo $row['title']; ?></h4>
+                            <p class="food-price">$<?php echo $row['price']; ?></p>
+                            <p class="food-detail"><?php echo $row['description']; ?></p>
+                            <br>
+
+                            <a href="#" class="btn btn-primary">Order Now</a>
+                        </div>
+                    </div><?php ;
+                    }
+                }else{
+                    echo '<p class="text-danger">Food Not found</p>';
+                }
+            }
+            ?>
+
+            <!-- <div class="food-menu-box">
                 <div class="food-menu-img">
                     <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
                 </div>
@@ -116,7 +144,7 @@
 
                     <a href="#" class="btn btn-primary">Order Now</a>
                 </div>
-            </div>
+            </div> -->
 
 
             <div class="clearfix"></div>
