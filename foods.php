@@ -31,6 +31,7 @@
                 $description = $row['description'];
                 $active = $row['active'];
                 $featured = $row['featured'];
+                
                 echo '<div class="food-menu-box">
                 <div class="food-menu-img">
                     <img src="'.SITEURL.'images/food/'.$image_name.'" alt="'.$image_name.'" class="img-responsive img-curve">

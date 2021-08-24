@@ -49,7 +49,7 @@ if(isset($_GET['id'])){
             <fieldset>
                 <legend></legend>
                 <div class="order-label">Title</div>
-                <input type="text" value="<?php echo $title; ?>" name="title" placeholder="" class="input-responsive" required>
+                <input type="text" disabled="disabled" value="<?php echo $title; ?>" name="title" placeholder="" class="input-responsive" required>
 
                 <div class="order-label">Description</div>
                 <textarea type="text" name="description" placeholder="" class="input-responsive rounded-1" required><?php echo $description; ?></textarea>

@@ -23,15 +23,21 @@
                 $count = mysqli_num_rows($result);
                 if ($count > 0) {
                     while ($row = mysqli_fetch_array($result)){
+
+                        $image_name = $row['image_name'];
+                        $price = $row['price'];
+                        $description = $row['description'];
+                        $title = $row['title'];
+
                         ?><div class="food-menu-box">
                         <div class="food-menu-img">
-                            <img src="images/menu-pizza.jpg" alt="Chicke Hawain Pizza" class="img-responsive img-curve">
+                           <?php if ($image_name !== ""){ echo '<img src="images/food/'.$image_name.'" alt="'.$title.'" class="img-responsive img-curve">'; }else{ echo "No image";} ?>
                         </div>
         
                         <div class="food-menu-desc">
-                            <h4><?php echo $row['title']; ?></h4>
-                            <p class="food-price">$<?php echo $row['price']; ?></p>
-                            <p class="food-detail"><?php echo $row['description']; ?></p>
+                            <h4><?php echo $title; ?></h4>
+                            <p class="food-price">$<?php echo $price; ?></p>
+                            <p class="food-detail"><?php echo $description; ?></p>
                             <br>
 
                             <a href="#" class="btn btn-primary">Order Now</a>
