@@ -3,6 +3,10 @@
 <div class="main-content">
 <div class="wrapper row py-lg-4 py-md-3 col-md-12">
             <p class="fs-2"><strong>Manage Order</strong></p>
+            <?php if (isset($_SESSION['wrongpass'])){
+                echo $_SESSION['wrongpass'];
+                unset($_SESSION['wrongpass']);
+            } ?>
 
             <div class="mb-3">
         </div>
@@ -30,6 +34,7 @@
                 $sn=1;
                 while ($row= mysqli_fetch_assoc($result)){
                     $food= $row['food'];
+                    $id= $row['id'];
                     $price = $row['price'];
                     $qty = $row['quantity'];
                     $total = $row['total'];
@@ -71,7 +76,7 @@
                 <td class="p-2"><?php echo $address;?></td>
                 <td class="p-2"><?php echo $email;?></td>
                 <td class="p-2 flex-wrap d-flex">
-                    <a href="" class="btn-sm btn-danger p-2">Cancel Order</a>
+                    <a href="<?php echo SITEURL ;?>admin/cancel-delivery.php?id=<?php echo $id;?>" class="btn-sm btn-danger p-2">Cancel Order</a>
                 </td>
             </tr>
                     <?php
