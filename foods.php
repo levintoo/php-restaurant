@@ -13,15 +13,16 @@
     <!-- fOOD sEARCH Section Ends Here -->
 
 
+    <!-- fOOD MEnu Section Starts Here -->
+    <section class="food-menu">
+        <div class="container">
     <?php
 if (isset($_SESSION['nofood'])){
     echo $_SESSION['nofood'];
     unset ($_SESSION['nofood']);
 }
+
 ?>
-    <!-- fOOD MEnu Section Starts Here -->
-    <section class="food-menu">
-        <div class="container">
             <h2 class="text-center">Food Menu</h2>
             <?php
         $query = "SELECT * FROM tbl_food WHERE active='Yes'";

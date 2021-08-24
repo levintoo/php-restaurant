@@ -13,11 +13,17 @@
     <!-- fOOD sEARCH Section Ends Here -->
 
     <!-- CAtegories Section Starts Here -->
-    <section class="categories">
+    <section class="categories"> <?php
+if (isset($_SESSION['foodorder'])){
+    echo $_SESSION['foodorder'];
+    unset ($_SESSION['foodorder']);
+}
+        ?>
         <div class="container">
             <h2 class="text-center">Explore Foods </h2>
 
             <?php
+        
         $query = "SELECT * FROM tbl_category WHERE featured='Yes' LIMIT  3 ";
         $result = mysqli_query($db, $query);
         $count = mysqli_num_rows($result);
@@ -47,6 +53,7 @@
 
     <!-- fOOD MEnu Section Starts Here -->
     <section class="food-menu">
+       
         <div class="container">
             <h2 class="text-center">Food Menu</h2>
 
