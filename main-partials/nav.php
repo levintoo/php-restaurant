@@ -57,11 +57,11 @@
                         $username = $row['full_name'];
                         echo '  
                         <li class="user">
-                        <a href="'.SITEURL.'php/log-out.php" class="badge text-success bg-none p-2">'.$username.'</a>
+                        <a href="'.SITEURL.'profile.php" class="badge text-success bg-none p-2">'.$username.'</a>
                         </li>
                         
                         <li class="guest nav-item">
-                            <a href="'.SITEURL.'php/log-out.php" class="badge bg-success p-2">logout</a>
+                            <a href="'.SITEURL.'ph/log-out.php" class="badge bg-success p-2">logout</a>
                             </li>
                           
                     ';

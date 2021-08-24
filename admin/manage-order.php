@@ -61,13 +61,13 @@
                  if($status ==0){
                      echo "Received";
                  }else if ($status ==1){
-                    echo "Pending";
+                    echo "<span class='text-secondary'>Pending</span>";
                  }else if ($status ==2){
-                    echo "Scheduled";
+                    echo "<span class='text-info'>Scheduled</span>";
                  }else if ($status ==3){
-                    echo "Cancelled";
+                    echo "<span class='text-danger'>Cancelled</span>";
                  }else if ($status ==4){
-                    echo "Delivered";
+                    echo "<span class='text-success'>Delivered</span>";
                  }
                  ?>
             </td>
