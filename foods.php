@@ -13,7 +13,12 @@
     <!-- fOOD sEARCH Section Ends Here -->
 
 
-
+    <?php
+if (isset($_SESSION['nofood'])){
+    echo $_SESSION['nofood'];
+    unset ($_SESSION['nofood']);
+}
+?>
     <!-- fOOD MEnu Section Starts Here -->
     <section class="food-menu">
         <div class="container">
