@@ -51,6 +51,7 @@
                 $price = $row['price'];
                 $description = $row['description'];
                 $image_name = $row['image_name'];
+                $food_id = $row['id'];
 
 
                 ?>        <div class="food-menu-box">
@@ -66,7 +67,7 @@
                     </p>
                     <br>
     
-                    <a href="#" class="btn btn-primary">Order Now</a>
+                    <a href="<?php echo SITEURL;?>order.php?id=<?php echo $food_id; ?>" class="btn btn-primary">Order Now</a>
                 </div>
             </div><?php
             }

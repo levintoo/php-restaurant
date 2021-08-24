@@ -28,6 +28,7 @@
                         $price = $row['price'];
                         $description = $row['description'];
                         $title = $row['title'];
+                        $food_id = $row['id'];
 
                         ?><div class="food-menu-box">
                         <div class="food-menu-img">
@@ -40,7 +41,7 @@
                             <p class="food-detail"><?php echo $description; ?></p>
                             <br>
 
-                            <a href="#" class="btn btn-primary">Order Now</a>
+                            <a href="<?php echo SITEURL;?>order.php?id=<?php echo $food_id; ?>" class="btn btn-primary">Order Now</a>
                         </div>
                     </div><?php ;
                     }
